@@ -1,25 +1,60 @@
+let clickedup = false;
+let clickeddown = false;
 function newreply(event) {
-  // if (event.target.parentNode.parentNode.getAttribute("data-id") != "main") {
-  //   marginleft += 150;
-  // } else {
-  //   marginleft = 150;
-  // }
-  event.target.parentNode.parentNode.innerHTML += `
-  <div class="comment" style="margin-left: 150px">
-    <h2>Faris Muhovic</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi velit, quod culpa harum sequi tempore maiores aperiam, repellendus deleniti amet incidunt voluptas voluptatum voluptatibus ex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, pariatur.</p>
+  event.target.parentNode.parentNode.parentNode.innerHTML += `
+  <div class="comment" style="margin-left: 10%">
+    <div class="user">
+      <img src="https://i.kym-cdn.com/entries/icons/original/000/028/861/cover3.jpg" alt="avatar">
+      <h2>Faris Muhovic</h2>
+    </div>
+    <textarea type="text" id="textinput" maxlength="569"></textarea>
     <div class="review">
-      <button>Like <span>0</span></button>
-      <button>Dislike <span>0</spa></button>
-      <button id="reply" onclick="newreply(event)">Reply</button>
+      <button onclick="thumbsup(event)"><i class="fa-solid fa-thumbs-up"></i> <textarea disabled="true">0</textarea></button>
+      <button onclick="thumbsdown(event)"><i class="fa-solid fa-thumbs-down"></i> <textarea disabled="true">0</textarea></button>
+      <button id="reply" onclick="newreply(event)"><i class="fa-solid fa-reply"></i></button>
+      <button id="post" onclick="post(event)">Post</button>
     </div>
   </div>`;
-  // console.log(event.target);
-  // console.log(event.target.parentNode.parentNode);
-  // console.log(event.target.firstChild);
-  // console.log(event.target.parentNode.parentNode.getAttribute("data-id"));
+  clickedup = false;
+  clickeddown = false;
 }
-commentContainer.firstChild;
-// just make the comment show under the eselected reply instead of the end of line !
-// and for reply of reply make it on the same line
-// insert before children etc. stuff like that
+
+function post(event) {
+  let textbox = event.target.parentNode.parentNode.children[1];
+  let textboxvalue = textbox.value;
+  if (textboxvalue.length > 10) {
+    textbox.style.border = "none";
+    textbox.innerText = textboxvalue;
+    textbox.style.height = textbox.scrollHeight + "px";
+    textbox.setAttribute("disabled", true);
+    event.target.remove();
+  } else {
+    alert("Please enter more than 10 words");
+  }
+}
+function thumbsup(event) {
+  if (clickedup == false) {
+    event.target.parentNode.lastChild.innerText = "1";
+    event.target.style.color = "green";
+    clickedup = true;
+  } else {
+    event.target.parentNode.lastChild.innerText = "0";
+    event.target.style.color = "white";
+    clickedup = false;
+  }
+}
+function thumbsdown(event) {
+  if (clickeddown == false) {
+    event.target.parentNode.lastChild.innerText = "1";
+    event.target.style.color = "red";
+    clickeddown = true;
+  } else {
+    event.target.parentNode.lastChild.innerText = "0";
+    event.target.style.color = "white";
+    clickeddown = false;
+  }
+}
+// be able to collapse elements
+// save it to local storage as "server"
+// make it so u cant make another post while making the post and prevent spam for creating posts.
+// make a diffrent post for getting post making smth like that

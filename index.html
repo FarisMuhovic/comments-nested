@@ -8,19 +8,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="design.css">
     <script src="script.js" async defer></script>
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   </head>
   <body>
     <div class="comment-container" id="commContainer">
       <h3>Comments</h3>
       <div class="comment" data-id="main">
-        <h2>Faris Muhovic</h2>
+        <div class="user">
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/028/861/cover3.jpg" alt="avatar">
+          <h2>Faris Muhovic</h2>
+        </div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi velit, quod culpa harum sequi tempore maiores aperiam, repellendus deleniti amet incidunt voluptas voluptatum voluptatibus ex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, pariatur.</p>
         <div class="review">
-          <button>Like <span>0</span></button>
-          <button>Dislike <span>0</spa></button>
-          <button id="reply" onclick="newreply(event)">Reply</button>
+          <button onclick="thumbsup(event)"><i class="fa-solid fa-thumbs-up"></i> <textarea disabled="true">0</textarea></button>
+          <button onclick="thumbsdown(event)"><i class="fa-solid fa-thumbs-down"></i> <textarea disabled="true">0</textarea></button>
+          <button id="reply" onclick="newreply(event)"><i class="fa-solid fa-reply"></i></button>
         </div>
       </div>
+      <!-- <div class="comment" style="margin-left: 10%">
+        <div class="user">
+          <img src="https://i.kym-cdn.com/entries/icons/original/000/028/861/cover3.jpg" alt="avatar">
+          <h2>Faris Muhovic</h2>
+        </div>
+        <textarea type="text" id="textinput" maxlength="420"></textarea>
+        <div class="review">
+          <button onclick="thumbsup(event)"><i class="fa-solid fa-thumbs-up"></i> <textarea disabled="true">0</textarea></button>
+          <button onclick="thumbsdown(event)"><i class="fa-solid fa-thumbs-down"></i> <textarea disabled="true">0</textarea></button>
+          <button id="reply" onclick="newreply(event)"><i class="fa-solid fa-reply"></i></button>
+          <button id="post">Post</button>
+        </div>
+      </div> -->
     </div>
   </body>
 </html>
