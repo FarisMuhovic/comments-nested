@@ -167,3 +167,15 @@ textarea {
   background-color: rgb(2, 155, 155);
   transition: 0.3s;
 }
+#collapse , #remove {
+  position: absolute;
+  right: 0;
+  margin-right: 1vw;
+  font-size: 15px;
+}
+#collapse {
+  font-size: 24px;
+}
+#remove {
+  top: 20px;
+}

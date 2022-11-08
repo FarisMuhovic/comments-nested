@@ -14,7 +14,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
   <body>
     <div class="comment-container" id="commContainer">
       <h3>Comments</h3>
-      <div class="comment" data-id="main">
+      <div class="comment" data-id="main" id="commcont">
         <div class="user">
           <img src="https://i.kym-cdn.com/entries/icons/original/000/028/861/cover3.jpg" alt="avatar">
           <h2>Faris Muhovic</h2>
@@ -24,6 +24,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
           <button onclick="thumbsup(event)"><i class="fa-solid fa-thumbs-up"></i> <textarea disabled="true">0</textarea></button>
           <button onclick="thumbsdown(event)"><i class="fa-solid fa-thumbs-down"></i> <textarea disabled="true">0</textarea></button>
           <button id="reply" onclick="newreply(event)"><i class="fa-solid fa-reply"></i></button>
+          <button id="collapse" onclick="collapse()">
+           <i class="fa-solid fa-square-minus"></i>
+          </button>
         </div>
       </div>
       <!-- <div class="comment" style="margin-left: 10%">
